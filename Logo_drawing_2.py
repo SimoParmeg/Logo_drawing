@@ -62,14 +62,12 @@ t.speed(4000)
 
 
 def square():
-    t.begin_fill()
     t.pendown()
     for i in range(4):
         t.forward(15)
         t.left(90)
 
     t.penup()
-    t.end_fill()
 
 
 for x in range(len(logo1)):
@@ -82,10 +80,22 @@ for x in range(len(logo2)):
     t.goto(logo2[x])
     square()
 
+t.begin_fill()
+t.goto(-60, 135)
+t.color("#4584b6")
+square()
+t.end_fill()
+
+t.begin_fill()
+t.goto(60, -135)
+t.color("#ffde57")
+square()
+t.end_fill()
+
 # write "Python" under logo
 
 t.goto(-60, -220)
-test = ("L1pixel", 31)
+test = ("L1pixel", "31")
 t.color("white")
 # noinspection PyTypeChecker
 t.write("Python", font=test)
